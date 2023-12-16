@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% load static %} 
+
+
+{% block title %}
+post detail title
+{% endblock  %}
+
+
+{% block css_files %}
+  <link rel="stylesheet" href="{% static "blog/post-detail.css" %}" />
+
+{% endblock %}
+
+
+{% block content %}
+
+<section id="summary">
+
+    <h2>Post Title</h2>
+    <article>
+        <img src="{% static "blog/images/mountains.jpg" %}" alt="Post Title">
+        <address>By SalahUddin</address>
+        <div>
+            Last Updated on <time>December 16</time>
+        </div>
+    </article>
+
+</section>
+
+<main>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum dolores temporibus repellendus culpa illum nisi delectus ab, quibusdam sunt commodi. Facilis voluptas recusandae expedita sed id placeat illo dignissimos error.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum dolores temporibus repellendus culpa illum nisi delectus ab, quibusdam sunt commodi. Facilis voluptas recusandae expedita sed id placeat illo dignissimos error.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum dolores temporibus repellendus culpa illum nisi delectus ab, quibusdam sunt commodi. Facilis voluptas recusandae expedita sed id placeat illo dignissimos error.</p>
+</main>
+
+{% endblock  %}
