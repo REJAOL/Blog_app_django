@@ -4,7 +4,7 @@
 
 
 {% block title %}
-post detail title
+{{ post.title }}
 {% endblock  %}
 
 
@@ -18,21 +18,21 @@ post detail title
 
 <section id="summary">
 
-    <h2>Post Title</h2>
+    <h2>{{ post.title }}</h2>
     <article>
-        <img src="{% static "blog/images/mountains.jpg" %}" alt="Post Title">
-        <address>By SalahUddin</address>
+        <img src="{% static "blog/images/"|add:post.image %}" alt="{{ post.title }}">
+        <address>By {{ post.author }}</address>
         <div>
-            Last Updated on <time>December 16</time>
+            Last Updated on <time>{{ post.date|date:"d M Y" }}</time>
         </div>
     </article>
 
 </section>
 
 <main>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum dolores temporibus repellendus culpa illum nisi delectus ab, quibusdam sunt commodi. Facilis voluptas recusandae expedita sed id placeat illo dignissimos error.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum dolores temporibus repellendus culpa illum nisi delectus ab, quibusdam sunt commodi. Facilis voluptas recusandae expedita sed id placeat illo dignissimos error.</p>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum dolores temporibus repellendus culpa illum nisi delectus ab, quibusdam sunt commodi. Facilis voluptas recusandae expedita sed id placeat illo dignissimos error.</p>
+
+    {{ post.content|linebreaks }}
+    
 </main>
 
 {% endblock  %}
